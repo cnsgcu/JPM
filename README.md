@@ -1,6 +1,6 @@
 # JPM
 
-An attempt to emulate pattern matching commonly found in functional programmings using Java 8
+An attempt to emulate pattern matching commonly found in functional programming languages using Java 8
 
 # Purpose
 
@@ -8,12 +8,14 @@ To practice Java 8, GitHub, and Markdown
 
 # Example
 
+Example 1
+
 ```java
 public static void main(String[] args)
 {
     final Object obj = "Match me!";
 
-    final Object rst = Matcher.match(obj)
+    final Object rst = match(obj)
         .inCase(Of(1)              , Optional::get)
         .inCase(Of(Integer.class)  , Optional::get)
         .inCase(Of(true)           , Optional::get)
@@ -24,6 +26,24 @@ public static void main(String[] args)
         .otherwise(() -> "WTF!");
 
     System.out.println(rst);
+}
+```
+
+Example 2
+
+```java
+public static void main(String[] args)
+{
+    final Object pieDate = "03-14-15";
+    final Pattern p1 = Pattern.compile("^(\\d\\d\\d\\d)\\-\\d\\d\\-\\d\\d$");
+    final Pattern p2 = Pattern.compile("^\\d\\d\\-\\d\\d\\-(\\d\\d)$");
+
+    final Matcher rst = home.journal.matcher.Matcher.<Matcher>match(pieDate)
+        .inCase(Of(p1), Optional::get)
+        .inCase(Of(p2), Optional::get)
+        .otherwise(() -> null);
+
+    System.out.println(rst.group(1));
 }
 ```
 
