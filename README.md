@@ -1,1 +1,1 @@
-echo # JPM
+# JPM
