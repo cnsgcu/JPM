@@ -51,7 +51,7 @@ public interface Extractor<T>
         return ge.extract(l);
     }
 
-    static public <T> Function<Object, Optional<T>> Of(Class<T> clazz)
+    static public <T> Function<Object, Optional<T>> Of(Class<? extends T> clazz)
     {
         final Extractor ge = new ClassExtractor();
 

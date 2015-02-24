@@ -47,6 +47,50 @@ public static void main(String[] args)
 }
 ```
 
+Example 3
+
+```java
+interface Color {};
+
+class Red implements Color
+{
+    public String toString()
+    {
+        return "red";
+    }
+};
+
+class Green implements Color
+{
+    public String toString()
+    {
+        return "green";
+    }
+};
+
+class Blue implements Color
+{
+    public String toString()
+    {
+        return "blue";
+    }
+};
+
+public static void main(String[] args)
+{
+    final Color color = new Red();
+    final Function<Optional<Color>, String> f = (c) -> c.get().toString();
+
+    String rst = Matcher.<String>match(color)
+        .inCase(Of(Red.class)  , f)
+        .inCase(Of(Green.class), f)
+        .inCase(Of(Blue.class) , f)
+        .otherwise(() -> "");
+
+    System.out.println(rst);
+}
+```
+
 # To Try
 
 - [ ] Guard
