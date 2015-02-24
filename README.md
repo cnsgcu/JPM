@@ -38,7 +38,7 @@ public static void main(String[] args)
     final Pattern p1 = Pattern.compile("^(\\d\\d\\d\\d)\\-\\d\\d\\-\\d\\d$");
     final Pattern p2 = Pattern.compile("^\\d\\d\\-\\d\\d\\-(\\d\\d)$");
 
-    final Matcher rst = home.journal.matcher.Matcher.<Matcher>match(pieDate)
+    final java.util.regex.Matcher rst = Matcher.<java.util.regex.Matcher.Matcher>match(pieDate)
         .inCase(Of(p1), Optional::get)
         .inCase(Of(p2), Optional::get)
         .otherwise(() -> null);
