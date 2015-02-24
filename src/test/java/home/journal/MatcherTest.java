@@ -7,7 +7,7 @@ import org.junit.Test;
 import java.text.MessageFormat;
 import java.util.Optional;
 
-import static home.journal.matcher.Extractor.Of;
+import static home.journal.matcher.Extraction.Of;
 
 public class MatcherTest
 {
