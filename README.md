@@ -35,8 +35,8 @@ public static void main(String[] args)
 public static void main(String[] args)
 {
     final Object pieDate = "03-14-15";
-    final Pattern p1 = Pattern.compile("^(\\d\\d\\d\\d)\\-\\d\\d\\-\\d\\d$");
-    final Pattern p2 = Pattern.compile("^\\d\\d\\-\\d\\d\\-(\\d\\d)$");
+    final Pattern p1 = Pattern.compile("^(\\d{4})\\-\\d{2}\\-\\d{2}$");
+    final Pattern p2 = Pattern.compile("^\\d{2}\\-\\d{2}\\-(\\d{2})$");
 
     final java.util.regex.Matcher rst = Matcher.<java.util.regex.Matcher.Matcher>match(pieDate)
         .inCase(Of(p1), Optional::get)
@@ -82,12 +82,12 @@ public static void main(String[] args)
     final Function<Optional<Color>, String> f = (c) -> c.get().toString();
 
     String rst = Matcher.<String>match(color)
-        .inCase(Of(Red.class)  , f)
+        .inCase(Of(Red.class)  , f)  // <~~ Found it!
         .inCase(Of(Green.class), f)
         .inCase(Of(Blue.class) , f)
         .otherwise(() -> "");
 
-    System.out.println(rst);
+    System.out.println(rst);  // <~~ print red
 }
 ```
 
