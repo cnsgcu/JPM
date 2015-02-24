@@ -47,15 +47,8 @@ public static void main(String[] args)
 }
 ```
 
-# Tasks
+# To Try
 
+- [ ] Guard
 - [ ] Binary
 - [ ] Collection
-- [x] String
-- [x] Regex
-- [x] Boolean
-- [x] Integer
-- [x] Float
-- [x] Double
-- [x] Long
-- [x] Class
