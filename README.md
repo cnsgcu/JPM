@@ -93,6 +93,9 @@ public static void main(String[] args)
 
 # To Try
 
-- [ ] Guard
 - [ ] Binary
+- [x] Class
 - [ ] Collection
+- [x] Comparable
+- [x] Regex
+- [x] Guard

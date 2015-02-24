@@ -31,14 +31,14 @@ public interface Extraction<I, O>
     }
 
 
-    public class ComparableExtraction<I extends Comparable> implements Extraction<I, Optional<I>>
+    class ComparableExtraction<T extends Comparable> implements Extraction<T, Optional<T>>
     {
         @Override
-        public Function<Object, Optional<I>> extract(I comp) {
+        public Function<Object, Optional<T>> extract(T comp) {
             return x -> {
                 if (comp.getClass().isAssignableFrom(x.getClass())) {
                     if (comp.compareTo(x) == 0) {
-                        return Optional.of((I) x);
+                        return Optional.of((T) x);
                     }
                 }
 
@@ -47,7 +47,7 @@ public interface Extraction<I, O>
         }
     }
 
-    public class ClassExtraction<T> implements Extraction<Class<T>, Optional<T>>
+    class ClassExtraction<T> implements Extraction<Class<T>, Optional<T>>
     {
         @Override
         public Function<Object, Optional<T>> extract(Class<T> clazz) {
@@ -61,7 +61,7 @@ public interface Extraction<I, O>
         }
     }
 
-    public class RegexExtraction implements Extraction<Pattern, Optional<Matcher>>
+    class RegexExtraction implements Extraction<Pattern, Optional<Matcher>>
     {
         @Override
         public Function<Object, Optional<java.util.regex.Matcher>> extract(Pattern ptn) {
