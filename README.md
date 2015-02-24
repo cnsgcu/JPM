@@ -20,7 +20,7 @@ public static void main(String[] args)
         .inCase(Of(false)          , Optional::get)
         .inCase(Of(Boolean.class)  , Optional::get)
         .inCase(Of("match me not!"), Optional::get)
-        .inCase(Of(String.class)   , Optional::get)
+        .inCase(Of(String.class)   , Optional::get)  // <~~ Found it!
         .otherwise(() -> "WTF!");
 
     System.out.println(rst);
