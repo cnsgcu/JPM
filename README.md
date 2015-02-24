@@ -25,7 +25,7 @@ public static void main(String[] args)
         .inCase(Of(String.class)   , Optional::get)  // <~~ Found it!
         .otherwise(() -> "WTF!");
 
-    System.out.println(rst);
+    System.out.println(rst); // <~~ print Match me!
 }
 ```
 
@@ -40,10 +40,10 @@ public static void main(String[] args)
 
     final java.util.regex.Matcher rst = Matcher.<java.util.regex.Matcher.Matcher>match(pieDate)
         .inCase(Of(p1), Optional::get)
-        .inCase(Of(p2), Optional::get)
+        .inCase(Of(p2), Optional::get)  // <~~ Match found
         .otherwise(() -> null);
 
-    System.out.println(rst.group(1));
+    System.out.println(rst.group(1)); // <~~ print 15
 }
 ```
 
