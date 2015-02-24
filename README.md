@@ -4,7 +4,7 @@ An attempt to emulate pattern matching commonly found in functional programming 
 
 # Purpose
 
-To practice Java 8, GitHub, and Markdown
+To practice Java 8, Git, and Markdown
 
 # Example
 
